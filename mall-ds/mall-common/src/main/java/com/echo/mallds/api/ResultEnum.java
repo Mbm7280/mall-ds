@@ -1,15 +1,15 @@
 package com.echo.mallds.api;
 
-public enum ResultEnum {
+public enum ResultEnum implements IErrorCode {
     SUCCESS(0000, "成功"),
 
     SERVER_ERROR(9999, "服务器错误");
 
-    private final Integer code;
+    private final long code;
 
     private final String message;
 
-    ResultEnum(Integer code, String message) {
+    ResultEnum(long code, String message) {
         this.code = code;
         this.message = message;
     }
@@ -22,7 +22,7 @@ public enum ResultEnum {
                 '}';
     }
 
-    public Integer getCode() {
+    public long getCode() {
         return code;
     }
 
